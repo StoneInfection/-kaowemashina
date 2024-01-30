@@ -2,20 +2,21 @@ from repository import CoffeRepository
 
 
 class CoffeSrvice:
+    def __init__(self):
+        self.repo = CoffeRepository()
 
     def get_coffe(self, coffe: str):
-        amount = CoffeRepository().get_coffe(coffe)
+        amount = self.repo.get_coffe(coffe)
         return amount
 
     def get_currency(self):
-        currency = CoffeRepository().get_currency()
+        currency = self.repo.get_currency()
         return currency
 
-    def balance(self, users_purse: int, balance: int):
+    def calculating_balance(self, users_purse: int, balance: int):
             balance += users_purse
-            print(balance)
             return balance
 
-    def change(self, amount: int, balance: int):
+    def calculating_change(self, amount: int, balance: int):
         change = balance - amount
         return change
