@@ -9,3 +9,5 @@ class CoffeRepository:
     def get_currency(self):
         currency = Currency().currency()
         return currency
+
+
